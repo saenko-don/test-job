@@ -14,8 +14,11 @@
         </f7-nav-right>
       </div>
     </f7-navbar>
-    <login-form v-show="storeState.isActiveLoginForm"></login-form>
-    <f7-list class="no-margin" v-show="!storeState.isActiveLoginForm">
+    <login-form v-if="storeState.isActiveLoginForm"
+                :title="titleLogin">
+    </login-form>
+    <f7-list class="no-margin"
+             v-if="!storeState.isActiveLoginForm">
       <f7-list-item v-for="(item, index) in items"
                     :title="`Item ${item}`"
                     :key="index">
@@ -27,8 +30,14 @@
           <f7-list>
             <f7-list-item>
               <f7-col>
-                <f7-button @click="onLogin"
+                <f7-button @click="onLogin('login')"
                            panel-close>Log in</f7-button>
+              </f7-col>
+            </f7-list-item>
+            <f7-list-item>
+              <f7-col>
+                <f7-button @click="onLogin('register')"
+                           panel-close>Register now</f7-button>
               </f7-col>
             </f7-list-item>
           </f7-list>
@@ -46,6 +55,7 @@
       return {
         items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
         isActiveUser: false,
+        titleLogin: '',
       }
     },
 
@@ -79,7 +89,8 @@
           self.storeState.allowInfinite = true;
         }, 1000);
       },
-      onLogin() {
+      onLogin(type) {
+        this.titleLogin = type;
         this.isActiveLogin();
       },
     }

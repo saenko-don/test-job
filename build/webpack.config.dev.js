@@ -34,7 +34,12 @@ module.exports = {
     contentBase: '/www/',
     watchOptions: {
       poll: 10000,
-    }
+    },
+    '^/api': {
+      target: 'https://reqres.in/',
+      ws: true,
+      proxyTimeout: 5000,
+    },
   },
   module: {
     rules: [

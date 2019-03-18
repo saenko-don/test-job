@@ -2,7 +2,7 @@
   <f7-page>
     <div class="page no-navbar no-toolbar no-swipeback">
       <div class="page-content login-screen-content">
-        <div class="login-screen-title">Log in</div>
+        <div class="login-screen-title">{{ title }}</div>
           <div class="list">
             <ul>
               <li class="item-content item-input">
@@ -11,7 +11,7 @@
                   <div class="item-input">
                     <input type="text"
                            placeholder="Your username"
-                           v-model="userName">
+                           v-model="params.email">
                   </div>
                 </div>
               </li>
@@ -21,7 +21,7 @@
                   <div class="item-input">
                     <input type="password"
                            placeholder="Your password"
-                           v-model="password">
+                           v-model="params.password">
                   </div>
                 </div>
               </li>
@@ -29,7 +29,7 @@
           </div>
           <div class="list">
             <f7-col>
-              <f7-button @click="logIn">Log in</f7-button>
+              <f7-button @click="logIn(title)">{{ title }}</f7-button>
             </f7-col>
             <div class="block-footer">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -46,15 +46,28 @@
 <script>
 export default {
   name: 'login-form',
+  props: {
+    title: {
+      type: String,
+      default() {
+        return '';
+      }
+    },
+  },
   data() {
     return {
-      userName: '',
-      password: '',
+      params: {
+        email: '',
+        password: '',
+      }
     }
   },
 
   methods: {
-    logIn() {
+    logIn(type) {
+      if (type === 'register') {
+        this.$store.dispatch('user/REGISTER_NOW', this.params)
+      } this.$store.dispatch('user/LOGIN_NOW', this.params);
       this.isActiveLogin();
     }
   }

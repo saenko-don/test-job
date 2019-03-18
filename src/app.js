@@ -5,6 +5,7 @@ import Framework7Vue from 'framework7-vue/framework7-vue.esm.bundle.js';
 import 'framework7/css/framework7.bundle.css';
 
 import storeMixin from '@/mixins/store';
+import lib from './plugins/lib';
 
 // Import Icons and App Custom Styles
 import IconsStyles from './css/icons.css';
@@ -12,6 +13,7 @@ import AppStyles from './css/app.css';
 
 import App from './app.vue';
 
+Vue.use(lib);
 Vue.mixin(storeMixin);
 
 Framework7.use(Framework7Vue);
