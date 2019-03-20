@@ -1,7 +1,7 @@
 import HomePage from './pages/home.vue';
 import NotFoundPage from './pages/not-found.vue';
-
 import PanelRightPage from './pages/panel-right.vue';
+import Settings from './pages/settings.vue';
 
 export default [
   {
@@ -11,6 +11,10 @@ export default [
   {
     path: '/panel-right/',
     component: PanelRightPage,
+  },
+  {
+    path: '/settings/',
+    component: Settings,
   },
   {
     path: '(.*)',

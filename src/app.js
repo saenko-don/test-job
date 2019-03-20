@@ -22,7 +22,7 @@ Vue.mixin(storeMixin);
 Framework7.use(Framework7Vue);
 
 const i18n = new VueI18n({
-  locale: 'en',
+  locale: 'ru',
   messages: language,
 });
 

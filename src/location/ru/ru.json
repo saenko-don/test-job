@@ -1,5 +1,6 @@
 {
   "home": {
-    "login": "Логин"
+    "login": "Логин",
+    "closeLoginForm": "Закрыть окно входа"
   }
 }

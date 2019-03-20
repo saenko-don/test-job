@@ -1,20 +1,25 @@
 export default {
+  watch: {
+    '$store.state.user.language'() {
+      this.$i18n.locale = this.storeUser.language;
+    }
+  },
   computed: {
     storeState: {
       get() {
-        return this.$store.state.state;
+        return this.$store.state.user;
       },
       set(value) {
-        this.$store.commit('state/SET_STATE', value);
+        this.$store.commit('SET_STATE', value);
       },
     },
 
     storeUser: {
       get() {
-        return this.$store.state.user.item;
+        return this.$store.state.user;
       },
       set(value) {
-        this.$store.commit('user/SET_ITEM', value);
+        this.$store.commit('SET_ITEM', value);
       },
     },
   },

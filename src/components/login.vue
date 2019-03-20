@@ -29,12 +29,12 @@
           </div>
           <div class="list">
             <f7-col>
-              <f7-button @click="logIn(title)">{{ title }}</f7-button>
+              <f7-button @click="logIn(title)">{{$t('home.login')}}</f7-button>
             </f7-col>
             <div class="block-footer">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               <f7-col>
-                <f7-button @click="logIn">Close Login Screen</f7-button>
+                <f7-button @click="logIn">{{$t('home.closeLoginForm')}}</f7-button>
               </f7-col>
             </div>
           </div>

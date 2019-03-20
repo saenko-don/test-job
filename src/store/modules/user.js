@@ -4,10 +4,10 @@ const localVue = new Vue();
 
 const state = {
   token: '',
+  language: '',
 };
 
 const getters = {
-  ITEM: localState => localState.item,
 };
 
 const actions = {
@@ -26,7 +26,7 @@ const actions = {
 
 const mutations = {
   SET_TOKEN: (localState, data) => {
-    localState.token = data;
+    localState.state = data;
   },
 };
 

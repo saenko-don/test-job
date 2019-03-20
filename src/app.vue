@@ -28,16 +28,14 @@ export default {
   },
 
   created() {
+    this.storeUser.language = navigator.language.split('-')[0];
     this.wsUpdater();
   },
   methods: {
     wsUpdater() {
       const socket = new WebSocket('wss://echo.websocket.org');
       socket.onopen = function(event) {
-        alert("Получены данные " + event.data);
-      };
-      socket.onmessage = function(event) {
-        alert("Получены данные " + event.data);
+        alert("Получены данные " + event.type);
       };
     },
   }

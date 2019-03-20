@@ -54,16 +54,13 @@
     data() {
       return {
         items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-        isActiveUser: false,
         titleLogin: '',
       }
     },
 
     methods: {
-
       loadMoreSwype(event, done) {
         const self = this;
-
         setTimeout(() => {
           const itemsLength = self.items.length;
           self.items.push(itemsLength + 1);
@@ -80,20 +77,15 @@
             self.storeState.showPreloader = false;
             return;
           }
-
           const itemsLength = self.items.length;
-
           for (let i = 1; i <= 20; i += 1) {
             self.items.push(itemsLength + i);
           }
-
           self.storeState.allowInfinite = true;
         }, 1000);
       },
       onLogin(type) {
-        this.$i18n.locale = 'ru';
         this.titleLogin = type;
-        this.isActiveLogin();
       },
     }
   }
