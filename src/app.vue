@@ -26,5 +26,20 @@ export default {
       },
     }
   },
+
+  created() {
+    this.wsUpdater();
+  },
+  methods: {
+    wsUpdater() {
+      const socket = new WebSocket('wss://echo.websocket.org');
+      socket.onopen = function(event) {
+        alert("Получены данные " + event.data);
+      };
+      socket.onmessage = function(event) {
+        alert("Получены данные " + event.data);
+      };
+    },
+  }
 }
 </script>

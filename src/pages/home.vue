@@ -31,7 +31,7 @@
             <f7-list-item>
               <f7-col>
                 <f7-button @click="onLogin('login')"
-                           panel-close>Log in</f7-button>
+                           panel-close>{{$t('home.login')}}</f7-button>
               </f7-col>
             </f7-list-item>
             <f7-list-item>
@@ -60,6 +60,7 @@
     },
 
     methods: {
+
       loadMoreSwype(event, done) {
         const self = this;
 
@@ -90,6 +91,7 @@
         }, 1000);
       },
       onLogin(type) {
+        this.$i18n.locale = 'ru';
         this.titleLogin = type;
         this.isActiveLogin();
       },
