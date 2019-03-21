@@ -7,7 +7,7 @@ export default {
   computed: {
     storeState: {
       get() {
-        return this.$store.state.user;
+        return this.$store.state.state;
       },
       set(value) {
         this.$store.commit('SET_STATE', value);

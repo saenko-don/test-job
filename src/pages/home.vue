@@ -86,6 +86,9 @@
       },
       onLogin(type) {
         this.titleLogin = type;
+        if (!this.storeState.isActiveLoginForm) {
+          this.isActiveLogin()
+        }
       },
     }
   }
