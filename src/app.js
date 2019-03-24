@@ -25,7 +25,7 @@ const localVue = new Vue();
 
 const i18n = new VueI18n({
   locale: localVue.$_.has(store.state.user.language, '0')
-    ? navigator.language.split('-')[0] : store.state.user.language,
+    ? store.state.user.language : navigator.language.split('-')[0],
   messages: language,
 });
 

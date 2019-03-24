@@ -5,6 +5,7 @@ const localVue = new Vue();
 const state = {
   token: '',
   language: '',
+  titleLogin: '',
 };
 
 const getters = {
@@ -26,7 +27,15 @@ const actions = {
 
 const mutations = {
   SET_TOKEN: (localState, data) => {
-    localState.state = data;
+    localState.token = data;
+  },
+
+  SET_LANGUAGE: (localState, data) => {
+    localState.language = data;
+  },
+
+  SET_TITLE_LOGIN: (localState, data) => {
+    localState.titleLogin = data;
   },
 };
 

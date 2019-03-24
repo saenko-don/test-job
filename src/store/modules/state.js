@@ -10,8 +10,16 @@ const actions = {
 };
 
 const mutations = {
-  SET_STATE: (localState, data) => {
-    localState.state = data;
+  SET_STATE_PRELOADER: (localState, data) => {
+    localState.showPreloader = data;
+  },
+
+  SET_STATE_LOGIN_FORM: (localState, data) => {
+    localState.isActiveLoginForm = data;
+  },
+
+  SET_STATE_ALLOW_INFINITE: (localState, data) => {
+    localState.allowInfinite = data;
   },
 };
 

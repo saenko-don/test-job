@@ -1,32 +1,59 @@
 export default {
   watch: {
     '$store.state.user.language'() {
-      this.$i18n.locale = this.storeUser.language;
+      this.$i18n.locale = this.storeUserLanguage;
     }
   },
   computed: {
-    storeState: {
+    storeStatePreloader: {
       get() {
-        return this.$store.state.state;
+        return this.$store.state.state.showPreloader;
       },
       set(value) {
-        this.$store.commit('SET_STATE', value);
+        this.$store.commit('state/SET_STATE_PRELOADER', value);
       },
     },
 
-    storeUser: {
+    storeStateAllowInfinite: {
       get() {
-        return this.$store.state.user;
+        return this.$store.state.state.allowInfinite;
       },
       set(value) {
-        this.$store.commit('SET_ITEM', value);
+        this.$store.commit('state/SET_STATE_ALLOW_INFINITE', value);
+      },
+    },
+
+    storeStateIsActiveLoginForm: {
+      get() {
+        return this.$store.state.state.isActiveLoginForm;
+      },
+      set(value) {
+        this.$store.commit('state/SET_STATE_LOGIN_FORM', value);
+      },
+    },
+
+    storeStateTitleLogin: {
+      get() {
+        return this.$store.state.user.titleLogin;
+      },
+      set(value) {
+        this.$store.commit('user/SET_TITLE_LOGIN', value);
+      },
+    },
+
+    storeUserLanguage: {
+      get() {
+        return this.$store.state.user.language;
+      },
+      set(value) {
+        this.$store.commit('user/SET_LANGUAGE', value);
       },
     },
   },
   methods: {
     isActiveLogin() {
-      this.storeState.showPreloader = !this.storeState.showPreloader;
-      this.storeState.isActiveLoginForm = !this.storeState.isActiveLoginForm;
+      this.storeStatePreloader = !this.storeStatePreloader;
+      this.storeStateIsActiveLoginForm = !this.storeStateIsActiveLoginForm;
     },
   }
 };

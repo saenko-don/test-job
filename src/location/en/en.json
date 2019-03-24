@@ -1,5 +1,50 @@
 {
+  "app": {
+    "login": "Login",
+    "register": "Registration"
+  },
+  "login": {
+    "title_login": "Login",
+    "title_register": "Registration",
+    "user_name": "Username",
+    "password": "Password",
+    "input_placeholder": {
+      "name": "Your name",
+      "password": "Password"
+    },
+    "login_form": {
+      "login": "Login",
+      "register": "Register",
+      "close_login_form": "Close window login",
+      "close_register_form": "Close registration window"
+    },
+    "p_1": "There will be some text about registration or entry."
+  },
   "home": {
-    "login": "Log in"
+    "title": "My test work"
+  },
+  "panel_right": {
+    "title": "Right panel",
+    "back_link": "Back",
+    "p_1": "Here will be the content of the right panel",
+    "settings": "Settings"
+  },
+  "settings": {
+    "title": "Settings",
+    "back_link": "Back",
+    "tabs": {
+      "tab_1": "Language",
+      "tab_2": "Something second",
+      "tab_3": "Something third"
+    },
+    "tab_1": {
+      "language_title": "Language"
+    },
+    "tab_2": {
+      "p_1": "There will be some text for the second tab."
+    },
+    "tab_3": {
+      "p_1": "There will be some text for the third tab."
+    }
   }
 }
